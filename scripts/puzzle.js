@@ -1,7 +1,11 @@
-function Point2d(x = 0, y = 0) {
-	this.x = x;
-	this.y = y;
-	this.Rotate = function (angle) {
+class Point2d {
+
+	constructor(x = 0, y = 0) {
+		this.x = x;
+		this.y = y;
+	}
+
+	rotate = (angle) => {
 		let ca = Math.cos(angle);
 		let sa = Math.sin(angle);
 		let x = this.x * ca - this.y * sa;
@@ -29,7 +33,7 @@ function RotateImage(angle, img, x, y, dx, dy) {
 
 	let p1 = new Point2d(dx, dy);
 	dContext.save();
-	p1.Rotate(angle);
+	p1.rotate(angle);
 	dContext.translate(-p1.x + x, -p1.y + y);
 	dContext.rotate(angle);
 	dContext.drawImage(img, 0, 0);
