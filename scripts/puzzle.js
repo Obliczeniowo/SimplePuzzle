@@ -160,7 +160,7 @@ function initialize() {
 
   document.onmousemove = getMousePos;
 
-  myCanvas.onclick = function (e) {
+  myCanvas.onclick = (e) => {
     if (onPosition < 16) {
       x =
         e.clientX +
@@ -227,7 +227,7 @@ function initialize() {
     }
   };
 
-  myCanvas.onmousemove = function (e) {
+  myCanvas.onmousemove = (e) => {
     if (selIndex > -1) {
       x =
         e.clientX +
@@ -246,7 +246,7 @@ function initialize() {
     if (onPosition < 16) draw();
   };
 
-  myCanvas.onMouseUp = function (e) {
+  myCanvas.onMouseUp = (e) => {
     selIndex = -1;
   };
 }
