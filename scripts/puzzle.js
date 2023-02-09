@@ -1,4 +1,4 @@
-function Point2d(x, y) {
+function Point2d(x = 0, y = 0) {
 	this.x = x;
 	this.y = y;
 	this.Rotate = function (angle) {
