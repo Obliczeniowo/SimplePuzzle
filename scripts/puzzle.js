@@ -36,14 +36,16 @@ function RotateImage(angle, img, x, y, dx, dy) {
 	dContext.restore();
 }
 
-function puzel(image, index, x, y) {
+class Puzzel {
+	constructor(image, index, x, y) {
 	this.pos = new Point2d(x, y);
 	this.image = image;
 	this.index = index;
 	this.angle = Math.random() * 360;
 	this.onPos = false;
+	}
 
-	this.draw = function () {
+	draw = () => {
 		RotateImage(this.angle, this.image, this.pos.x, this.pos.y, dx, dy);
 	}
 }
@@ -141,7 +143,7 @@ function initialize() {
 	}
 
 	for (let i = 0; i < 16; i++) { //
-		puzzle[i] = new puzel(imgPuzzle[index[i]], index[i], (i % 6) * 150 + 150, Math.floor(i / 6) * 200 + 150);
+		puzzle[i] = new Puzzel(imgPuzzle[index[i]], index[i], (i % 6) * 150 + 150, Math.floor(i / 6) * 200 + 150);
 	}
 
 	draw();
